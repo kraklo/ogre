@@ -4,6 +4,7 @@ use uuid::Uuid;
 
 use crate::card::Card;
 
+#[derive(Debug)]
 pub struct Hand {
     pub cards: HashMap<Uuid, Card>,
     pub has_kept: bool,

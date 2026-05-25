@@ -12,6 +12,7 @@ use crate::stack::Stack;
 
 pub const STARTING_HAND_SIZE: u8 = 7;
 
+#[derive(Debug)]
 pub struct GameState {
     pub rng: ChaCha20Rng,
     players: PlayerSet,

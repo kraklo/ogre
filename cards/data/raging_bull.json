@@ -1,0 +1,21 @@
+{
+    "name": "Raging Bull",
+    "mana_value": {
+        "white": 0,
+        "blue": 0,
+        "black": 0,
+        "red": 1,
+        "green": 0,
+        "colorless": 0,
+        "generic": 2
+    },
+    "color_identity": [
+        "Red"
+    ],
+    "card_type": {
+        "Creature": {
+            "power": 2,
+            "toughness": 2
+        }
+    }
+}

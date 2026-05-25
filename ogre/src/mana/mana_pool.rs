@@ -1,3 +1,4 @@
+#[derive(Debug)]
 pub struct ManaPool {
     white: u64,
     blue: u64,

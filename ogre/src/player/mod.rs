@@ -9,6 +9,7 @@ use crate::errors::GameResult;
 use crate::game_state::STARTING_HAND_SIZE;
 use crate::mana::mana_pool::ManaPool;
 
+#[derive(Debug)]
 pub struct PlayerSet {
     pub players: Vec<Player>,
     pub active_player_index: usize,
@@ -31,6 +32,7 @@ impl PlayerSet {
     }
 }
 
+#[derive(Debug)]
 pub struct Player {
     id: Uuid,
     name: String,

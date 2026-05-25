@@ -1,0 +1,10 @@
+[package]
+name = "text_harness"
+version = "0.1.0"
+edition = "2024"
+
+[dependencies]
+hex = "0.4.3"
+ogre = { path = "../ogre" }
+serde_json = "1.0.150"
+uuid = "1.23.1"

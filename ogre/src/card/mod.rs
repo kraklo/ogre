@@ -4,11 +4,13 @@ pub mod library;
 
 use crate::{
     card::card_types::{creature::Creature, land::Land},
+    mana::{colors::Color, mana_value::ManaValue},
     zone::Zone,
 };
+use serde::Deserialize;
 use uuid::Uuid;
 
-#[derive(Clone)]
+#[derive(Clone, Debug, Deserialize)]
 pub enum CardData {
     Land(Land),
     Creature(Creature),
@@ -19,10 +21,12 @@ pub enum CardData {
     // Planeswalker,
 }
 
-#[derive(Clone)]
+#[derive(Clone, Debug)]
 pub struct Card {
     pub id: Uuid,
     owner_id: Uuid,
+    mana_value: ManaValue,
+    color_identity: Vec<Color>,
     name: String,
     zone: Zone,
     is_tapped: bool,
@@ -30,14 +34,24 @@ pub struct Card {
 }
 
 impl Card {
-    pub fn new(owner_id: Uuid, name: String, data: CardData) -> Self {
+    pub fn from_card_json(owner_id: Uuid, card_json: CardJson) -> Self {
         Self {
             id: Uuid::new_v4(),
             owner_id,
-            name,
+            mana_value: card_json.mana_value,
+            color_identity: card_json.color_identity,
+            name: card_json.name,
             zone: Zone::Library,
             is_tapped: false,
-            data,
+            data: card_json.card_type,
         }
     }
+}
+
+#[derive(Clone, Deserialize)]
+pub struct CardJson {
+    name: String,
+    mana_value: ManaValue,
+    color_identity: Vec<Color>,
+    card_type: CardData,
 }

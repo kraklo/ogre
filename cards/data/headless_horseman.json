@@ -1,0 +1,21 @@
+{
+    "name": "Headless Horseman",
+    "mana_value": {
+        "white": 0,
+        "blue": 0,
+        "black": 1,
+        "red": 0,
+        "green": 0,
+        "colorless": 0,
+        "generic": 2
+    },
+    "color_identity": [
+        "Black"
+    ],
+    "card_type": {
+        "Creature": {
+            "power": 2,
+            "toughness": 2
+        }
+    }
+}
