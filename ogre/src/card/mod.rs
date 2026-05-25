@@ -1,4 +1,5 @@
 pub mod card_types;
+pub mod hand;
 pub mod library;
 
 use crate::{
@@ -7,6 +8,7 @@ use crate::{
 };
 use uuid::Uuid;
 
+#[derive(Clone)]
 pub enum CardData {
     Land(Land),
     Creature(Creature),
@@ -17,8 +19,9 @@ pub enum CardData {
     // Planeswalker,
 }
 
+#[derive(Clone)]
 pub struct Card {
-    id: Uuid,
+    pub id: Uuid,
     owner_id: Uuid,
     name: String,
     zone: Zone,

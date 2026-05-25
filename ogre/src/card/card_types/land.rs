@@ -1,7 +1,6 @@
 use uuid::Uuid;
 
-use crate::card::Card;
-
+#[derive(Clone)]
 pub struct Land {
     id: Uuid,
     owner_id: Uuid,

@@ -1,4 +1,6 @@
+#[derive(Clone, Debug, Eq, PartialEq)]
 pub enum Phase {
+    PreGame(PreGamePhase),
     Untap,
     Upkeep,
     Draw,
@@ -7,4 +9,10 @@ pub enum Phase {
     SecondMain,
     EndStep,
     Cleanup,
+}
+
+#[derive(Clone, Debug, Eq, PartialEq)]
+pub enum PreGamePhase {
+    KeepOrMulligan,
+    MulliganChooseBottom,
 }
